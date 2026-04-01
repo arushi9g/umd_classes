@@ -5,7 +5,7 @@
 
 # 1. Goal
 
-This tutorial provides everything needed to become familiar with **CrewAI** in 60 minutes.
+This tutorial provides everything needed to become familiar with CrewAI in 60 minutes.  This folder also contains the setup for running AutoGen tutorials within a containerized environment.
 
 CrewAI is a framework for building **collaborative multiagent AI systems** where agents with specialized roles plan, execute, critique, and refine tasks iteratively.
 
@@ -43,61 +43,43 @@ You can:
 - Implement retry logic
 - Track explicit state
 
-## Self Sufficiency
-
-Everything runs inside Docker.
-All dependencies are pinned.
-No local environment conflicts.
-
 ## Reproducibility
 
 - Notebook runs end to end
 - Dependencies are managed via the container environment
-- Takes ~ 3 minutes to execute
 
 ---
 
 # 3. Structure
 
-## Setup
+## Quick Start
+- From the root of the repository, change your directory to the CrewAI tutorial
+  folder:
+  ```bash
+  > cd tutorials/CrewAI
+  ```
 
-- Clone repository
-- Build Docker container
-- Start Jupyter
-- Verify environment
+- Once the location has been changed to the repo run the command to build the
+  image to run dockers:
+  ```bash
+  > ./docker_build.sh
+  ```
 
-## API Exploration
+- Once the docker has been built you can then go ahead and run the container and
+  launch jupyter notebook using the created image using the command:
+  ```bash
+  > ./docker_jupyter.sh
+  ```
 
-Work through:
+- Once the `./docker_jupyter.sh` script is running, follow this sequence to
+  explore the tutorials:
+  1. **`tutorial_crewai.ipynb`**: Start here to master the fundamental commands and more about creating agents, defining tasks, running a crew, how to give an agent tools and how an agent calls Python functions.
+  2. **`Autogen.example.ipynb`**: Proceed to this notebook to explore more
+     complex, multi-agent scenarios and advanced problem-solving techniques.
 
-`tutorial_crewai.ipynb`
+- For more informations on the Docker build system refer to [Project template
+  readme](https://github.com/gpsaggese/umd_classes/blob/master/class_project/project_template/README.md)
 
-Learn:
-
-- Creating agents
-- Defining tasks
-- Running a crew
-- How to give an agent tools
-- How an agent calls Python functions
-
----
-
-# 4. Docker Container
-
-The Docker container:
-
-- Installs CrewAI and dependencies
-- Installs nbclient
-- Installs Jupyter
-- Pins all versions
-- Runs notebook tests
-
-Build container:
-
-```bash
-docker compose build
-docker compose up
-```
 
 # 5. What is CrewAI?
 
