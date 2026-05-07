@@ -14,7 +14,7 @@
 # ---
 
 # %% [markdown]
-# # CrewAI API Overview
+# # CrewAI API
 #
 # CrewAI is an open-source Python framework for building **role-playing,
 # autonomous AI agent crews**. Each agent has a defined role, goal, and
@@ -29,7 +29,7 @@
 # - **Process** – sequential vs. hierarchical execution
 
 # %% [markdown]
-# ## Setup
+# ## Imports
 
 # %%
 import logging
@@ -64,7 +64,18 @@ llm = tcrwuti.get_local_llm(
     temperature=0.2,
 )
 print(f"LLM model: {llm.model}")
+# %% [markdown]
+# ## Notebook Structure
+#
+# This notebook follows a basic progression:
+# - Configure LLM
+# - Define agents
+# - Assign tasks
+# - Execute a crew
+# - Extend with tools
+# - Understand how to build multi-step workflows
 
+# %%
 # %% [markdown]
 # ## Agents
 #

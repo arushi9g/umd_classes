@@ -15,7 +15,13 @@
 
 # %% [markdown]
 # # Crew AI Agents, Local LLMs (Ollama: Qwen, Gemma)
-
+#
+# ## Notebook Structure
+# Part 1 of this notebook introduces the minimal CrewAI workflow:
+# - Configure a local LLM (Ollama)
+# - Define a simple agent
+# - Create a task
+# - Execute a crew
 # %%
 from crewai import Agent, Task, Crew, Process, LLM
 
@@ -38,6 +44,7 @@ summarizer = Agent(
 with open("data/sample.txt") as f:
     doc_text = f.read()
 
+# Define a task
 task = Task(
     description=(
         f"Summarize the following text into exactly 3 concise bullet points:\n\n{doc_text}"
@@ -46,6 +53,7 @@ task = Task(
     agent=summarizer,
 )
 
+# Execute a crew
 crew = Crew(
     agents=[summarizer],
     tasks=[task],
@@ -59,7 +67,12 @@ if __name__ == "__main__":
 
 # %% [markdown]
 # ## Agentic EDA Demo
-
+# Part 2 of this notebook introduces a use of CrewAI with Agentic EDA
+# demonstrating the following:
+# - Why tools matter
+# - Define tools
+# - Attach to agent
+# - Run multi-step task
 # %%
 # main.py
 import os
